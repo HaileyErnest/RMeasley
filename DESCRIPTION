@@ -14,3 +14,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+URL: https://github.com/nicoleeyee/RMeasley
+BugReports: https://github.com/nicoleeyee/RMeasley/issues
