@@ -1,0 +1,38 @@
+---
+title: "main-functions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{main-functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(RMeasley)
+```
+
+```{r}
+plot_gdp_cases_map(measles_data, year = 2024, top_n = 20)
+```
+
+This will create a map using leaflet showing the top n countries with the highest gdp per capita and lowest measles case count per 1,000,000 people in the population in a specified year. There will be different colored markers for the gdp category and measles category, and a separate color for countries that fall in both categories. The default year is 2024 and the default top n is 20.
+
+```{r}
+measles_incidence_rates_gdp(measles_data, region = "Africa", year)
+```
+
+This will produce a summary output of average measles incidence rate for a given region for 5 GDP groups in a specified year. The GDP groups are determined as quintiles of GDP values in that year. The default region is Africa and the default year is 2024.
+
+```{r}
+epi_linked_cases(measles_data, region = "Africa")
+```
+
+This will produce a summary output of the proportion of measles cases that are epidemiologically linked for a specified region in all years. The default region is Africa.
+
