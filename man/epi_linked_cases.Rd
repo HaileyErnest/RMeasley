@@ -7,13 +7,14 @@
 epi_linked_cases(measles_data, region = "Africa")
 }
 \arguments{
-\item{measles_data}{a dataframe of measles case data}
+\item{measles_data}{A data frame of measles case data.}
 
-\item{region}{a string input of a region name}
+\item{region}{A string input of a region name.}
+}
+\value{
+A tibble with year and proportion of epidemiologically linked measles cases.
 }
 \description{
-Produce a summary output of the proportion of measles cases that are epidemiologically linked for a specified region over time
-}
-\examples{
-epi_linked_cases(measles_data, "Africa")
+Produce a summary output of the proportion of measles cases that are
+epidemiologically linked for a specified region over time.
 }

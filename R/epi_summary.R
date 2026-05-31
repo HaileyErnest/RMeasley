@@ -11,9 +11,6 @@
 #' @importFrom stringr str_to_title
 #' @importFrom rlang .data
 #' @export
-#'
-#' @examples
-#' epi_linked_cases(measles_data, "Africa")
 epi_linked_cases <- function(measles_data, region = "Africa") {
 
   region_input <- check_region(region)
