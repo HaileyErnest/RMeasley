@@ -9,13 +9,21 @@ License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
 Imports:
-  readr
+  readr,
+  dplyr,
+  glue,
+  htmltools,
+  leaflet,
+  rlang,
+  scales,
+  stringr
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 8.0.0
 Suggests: 
     knitr,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    tibble
 VignetteBuilder: knitr
 URL: https://github.com/nicoleeyee/RMeasley
 BugReports: https://github.com/nicoleeyee/RMeasley/issues

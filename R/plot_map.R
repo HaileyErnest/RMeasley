@@ -9,19 +9,17 @@
 #' @returns a Leaflet map
 #' @importFrom dplyr group_by slice_min mutate bind_rows filter summarise
 #' @importFrom leaflet leaflet addTiles setView setMaxBounds addCircleMarkers addLegend
+#' @importFrom scales comma
 #' @export
-#'
-#' @examples
-#' plot_gdp_cases_map(measles_data, 2024, 20)
 plot_gdp_cases_map <- function(measles_data, year_chosen = 2024, top_n = 20) {
 
   year_chosen <- check_year(measles_data, year_chosen)
 
   top_measles <- measles_data |>
-    dplyr::filter(year == year_chosen) |>
+    dplyr::filter(.data$year == year_chosen) |>
     dplyr::slice_min(
       n = top_n,
-      order_by = measles_incidence_rate_per_1000000_total_population
+      order_by = .data$measles_incidence_rate_per_1000000_total_population
     ) |>
     dplyr::mutate(type = "cases")
 
@@ -33,7 +31,7 @@ plot_gdp_cases_map <- function(measles_data, year_chosen = 2024, top_n = 20) {
     ) |>
     dplyr::mutate(type = "gdp") |>
     dplyr::bind_rows(top_measles) |>
-    dplyr::group_by(country, Longitude, Latitude) |>
+    dplyr::group_by(.data$country, .data$Longitude, .data$Latitude) |>
     dplyr::summarise(
       both = dplyr::n() == 2,
       type = dplyr::if_else(both, "both", dplyr::first(type)),
