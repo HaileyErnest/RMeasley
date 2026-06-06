@@ -19,3 +19,6 @@ a Leaflet map
 \description{
 Produce a map of countries with lowest measles case rate and highest GDP in a given year
 }
+\examples{
+plot_gdp_cases_map(load_data(), 2024, 20)
+}

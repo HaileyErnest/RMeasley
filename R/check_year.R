@@ -4,7 +4,6 @@
 #' @param year_chosen A year to check.
 #'
 #' @returns The year if it exists in the data.
-#'
 
 check_year <- function(measles_data, year_chosen) {
   if (!year_chosen %in% measles_data$year) {

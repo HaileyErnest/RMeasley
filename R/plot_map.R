@@ -11,12 +11,24 @@
 #' @importFrom leaflet leaflet addTiles setView setMaxBounds addCircleMarkers addLegend
 #' @importFrom scales comma
 #' @export
+#'
+#' @examples
+#' plot_gdp_cases_map(load_data(), 2024, 20)
+
 plot_gdp_cases_map <- function(measles_data, year_chosen = 2024, top_n = 20) {
 
   if (!is.numeric({{top_n}})) {
     stop("Please enter a valid number of countries to check. ")
   } else if ({{top_n}} > 244) {
     stop("Please enter a valid number of countries to check.")
+  } else if (!{{top_n}} %% 2 == 0) {
+    stop("Please enter a valid number of countries to check.")
+  }
+
+  if (!is.numeric({{year_chosen}})) {
+    stop("Please enter an integer as a numeric value from 2012 to 2024.")
+  } else if (!{{year_chosen}} %% 2 == 0) {
+    stop("Please enter a valid year to check.")
   }
 
   year_input <- check_year(measles_data, {{year_chosen}})

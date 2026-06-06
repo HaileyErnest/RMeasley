@@ -11,22 +11,25 @@
 #' @importFrom stringr str_to_title
 #' @importFrom rlang .data
 #' @export
+#' @example
+#' epi_linked_cases(load_data(), "Africa")
+
 epi_linked_cases <- function(measles_data, region = "Africa") {
 
   region_input <- check_region({{region}})
 
   measles_data |>
-    dplyr::mutate(
-      region_name = dplyr::recode(
-        .data$region,
-        "AFR" = "Africa",
-        "AMR" = "Americas",
-        "EMR" = "Eastern Mediterranean",
-        "EUR" = "Europe",
-        "SEAR" = "South-East Asia",
-        "WPR" = "Western Pacific"
-      )
-    ) |>
+    # dplyr::mutate(
+    #   region_name = dplyr::recode(
+    #     .data$region,
+    #     "AFR" = "Africa",
+    #     "AMR" = "Americas",
+    #     "EMR" = "Eastern Mediterranean",
+    #     "EUR" = "Europe",
+    #     "SEAR" = "South-East Asia",
+    #     "WPR" = "Western Pacific"
+    #   )
+    # ) |>
     dplyr::filter(.data$region_name == region_input) |>
     dplyr::group_by(.data$year) |>
     dplyr::summarise(

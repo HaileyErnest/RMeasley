@@ -5,6 +5,10 @@
 #' @returns A cleaned region name if the region is valid.
 
 check_region <- function(region) {
+
+  if (!is.character(region)) {
+    stop("Please enter a string value.")
+  }
   region_input <- stringr::str_to_title(region)
 
   valid_regions <- c(
