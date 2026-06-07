@@ -18,3 +18,6 @@ A tibble with year and proportion of epidemiologically linked measles cases.
 Produce a summary output of the proportion of measles cases that are
 epidemiologically linked for a specified region over time.
 }
+\examples{
+epi_linked_cases(load_data(), "Africa")
+}
