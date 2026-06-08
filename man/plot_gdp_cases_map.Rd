@@ -7,7 +7,7 @@
 plot_gdp_cases_map(measles_data, year_chosen = 2024, top_n = 20)
 }
 \arguments{
-\item{measles_data}{a dataframe of measles case data}
+\item{measles_data}{a dataframe of measles case data using load_data()}
 
 \item{year_chosen}{a year from 2012 to 2024}
 

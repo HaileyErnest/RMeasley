@@ -7,7 +7,7 @@
 plot_cases(measles_data, start = 2012, end = 2024)
 }
 \arguments{
-\item{measles_data}{a dataframe of measles and rubella cases}
+\item{measles_data}{a dataframe of measles and rubella cases using load_data()}
 
 \item{start}{start year to plot cases}
 

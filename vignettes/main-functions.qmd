@@ -20,7 +20,7 @@ library(RMeasley)
 
 ### Load the data
 
-The load_data() function loads the full merged measles and GDP dataset from the package inst/extdata folder. It also uses the package cleaning helper to rename regions and add country coordinate information.
+The load_data() function loads the full merged measles and GDP dataset from the package inst/extdata folder. It also uses the package cleaning helper to rename regions and add country coordinate information. The data loaded should be used for all other functions in this package. Regions that are included in the data, and can be used in other functions, are Africa, Americas, Eastern Mediterranean, Europe, South-East Asia, and Western Pacific. The range of years that are included are 2012 to 2024.
 
 ```{r}
 measles_data <- load_data()
