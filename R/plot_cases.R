@@ -1,6 +1,6 @@
 #' Plot measles and rubella cases over time
 #'
-#' @param measles_data a dataframe of measles and rubella cases
+#' @param measles_data a dataframe of measles and rubella cases using load_data()
 #' @param start start year to plot cases
 #' @param end end year to plot cases
 #'
@@ -29,22 +29,18 @@ plot_cases <- function(measles_data, start = 2012, end = 2024) {
   } else if (end < 2012 | end > 2025) {
     stop("Please enter a year between 2012 and 2024.")
   } else if (start > end) {
-    print("Years not in order. Switching start and end year.")
+    warning("Years not in order. Switching start and end year.")
 
     new_start <- end
     new_end <- start
 
+  } else if(end - start == 0) {
+    stop("Please select an end year that is different from the start year.")
   }
 
-  annotate_text <- tibble(
-    year = c(2014.5, 2014.3),
-    y_lab = c(75000, 200000),
-    disease = c("Rubella", "Measles")
-  )
-
   measles_data |>
-    filter(year >= start,
-           year <= end) |>
+    filter(year >= new_start,
+           year <= new_end) |>
     group_by(year) |>
     summarize(measles = sum(measles_total, na.rm = TRUE),
               rubella = sum(rubella_total, na.rm = TRUE)) |>
@@ -73,14 +69,6 @@ plot_cases <- function(measles_data, start = 2012, end = 2024) {
                        expand = c(0.01,0.01)) +
     scale_y_continuous(breaks = seq(0, 600000, by = 100000),
                        labels = scales::label_comma()) +
-    geom_text(data = annotate_text,
-              mapping = aes(x = year,
-                            y = y_lab,
-                            label = disease,
-                            color = disease),
-              inherit.aes = FALSE,
-              show.legend = FALSE
-    ) +
     theme_bw() +
     labs(x = "Year",
          y = "Number of Cases",

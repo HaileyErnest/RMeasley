@@ -2,7 +2,7 @@
 #'
 #' Produce a map of countries with lowest measles case rate and highest GDP in a given year
 #'
-#' @param measles_data a dataframe of measles case data
+#' @param measles_data a dataframe of measles case data using load_data()
 #' @param year_chosen a year from 2012 to 2024
 #' @param top_n number of countries to be displayed
 #'

@@ -7,7 +7,7 @@
 load_data()
 }
 \value{
-A dataframe of measles data by month
+A dataframe of measles and rubella case data for countries by year.
 }
 \description{
 Load data

@@ -7,9 +7,9 @@
 check_year(measles_data, year_chosen)
 }
 \arguments{
-\item{measles_data}{A data frame of measles case data.}
+\item{measles_data}{A data frame of measles case data using load_data().}
 
-\item{year_chosen}{A year to check.}
+\item{year_chosen}{A number value representing a year to check.}
 }
 \value{
 The year if it exists in the data.

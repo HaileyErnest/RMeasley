@@ -7,9 +7,9 @@
 epi_linked_cases_table(measles_data, region = "Africa")
 }
 \arguments{
-\item{measles_data}{A data frame of measles case data.}
+\item{measles_data}{A data frame of measles case data using load_data().}
 
-\item{region}{A string input of a region name.}
+\item{region}{A string input of a region name. Possible regions are "Africa", "Americas", "Eastern Mediterranean", "Europe", "South-East Asia", and "Western Pacific".}
 }
 \value{
 A tibble with year and proportion of epidemiologically linked measles cases.

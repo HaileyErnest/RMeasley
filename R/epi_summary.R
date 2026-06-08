@@ -3,9 +3,8 @@
 #' Produce a summary output of the proportion of measles cases that are
 #' epidemiologically linked for a specified region over time.
 #'
-#' @param measles_data A data frame of measles case data.
-#' @param region A string input of a region name.
-#'
+#' @param measles_data A data frame of measles case data using load_data().
+#' @param region A string input of a region name. Possible regions are "Africa", "Americas", "Eastern Mediterranean", "Europe", "South-East Asia", and "Western Pacific".
 #' @returns A tibble with year and proportion of epidemiologically linked measles cases.
 #' @importFrom dplyr recode filter group_by summarise mutate select
 #' @importFrom stringr str_to_title

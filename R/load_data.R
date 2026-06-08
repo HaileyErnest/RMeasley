@@ -1,6 +1,6 @@
 #' Load data
 #'
-#' @returns A dataframe of measles data by month
+#' @returns A dataframe of measles and rubella case data for countries by year.
 #'
 #' @importFrom arrow read_parquet
 #' @export

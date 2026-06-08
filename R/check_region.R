@@ -1,6 +1,6 @@
 #' Helper: Check that a region is valid
 #'
-#' @param region A string input of a region name.
+#' @param region A string input of a region name. Valid regions are "Africa", "Americas", "Eastern Mediterranean", "Europe", "South-East Asia", and "Western Pacific".
 #'
 #' @returns A cleaned region name if the region is valid.
 
