@@ -28,7 +28,7 @@ analyze_region_gdp <- function(measles_data, start_year = 2012, end_year = 2024)
       .data$year,
       .data$region,
       .data$gdp_per_capita,
-      .data$measles_epi_linked_year
+      .data$measles_epi_linked
     ) |>
     dplyr::filter(
       .data$year >= start_year,
@@ -36,14 +36,14 @@ analyze_region_gdp <- function(measles_data, start_year = 2012, end_year = 2024)
       .data$gdp_per_capita > 0
     ) |>
     tidyr::drop_na(
-      .data$gdp_per_capita,
-      .data$measles_epi_linked_year,
-      .data$region
+      gdp_per_capita,
+      measles_epi_linked,
+      region
     ) |>
     dplyr::mutate(
       region = factor(.data$region),
       log_gdp = log10(.data$gdp_per_capita),
-      log_epi_linked = log1p(.data$measles_epi_linked_year)
+      log_epi_linked = log1p(.data$measles_epi_linked)
     )
 
   model_gdp_only <- stats::lm(

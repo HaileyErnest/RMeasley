@@ -30,7 +30,7 @@ epi_linked_cases <- function(measles_data, region = "Africa") {
     #     "WPR" = "Western Pacific"
     #   )
     # ) |>
-    dplyr::filter(.data$region_name == region_input) |>
+    dplyr::filter(.data$region == region_input) |>
     dplyr::group_by(.data$year) |>
     dplyr::summarise(
       measles_epi_linked = sum(.data$measles_epi_linked, na.rm = TRUE),
@@ -41,5 +41,5 @@ epi_linked_cases <- function(measles_data, region = "Africa") {
       prop_epi_measles = .data$measles_epi_linked /
         (.data$measles_epi_linked + .data$measles_lab_confirmed)
     ) |>
-    dplyr::select(.data$year, .data$prop_epi_measles)
+    dplyr::select(year, prop_epi_measles)
 }

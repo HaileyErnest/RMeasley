@@ -55,9 +55,9 @@ gdp_summary <- function(measles_data, start_year = 2012, end_year = 2024) {
       .data$gdp_group,
       fill = list(median_incidence_rate = 0)
     ) |>
-    dplyr::select(.data$region, .data$gdp_group, .data$median_incidence_rate) |>
+    dplyr::select(region, gdp_group, median_incidence_rate) |>
     tidyr::pivot_wider(
-      names_from = .data$gdp_group,
-      values_from = .data$median_incidence_rate
+      names_from = gdp_group,
+      values_from = median_incidence_rate
     )
 }
